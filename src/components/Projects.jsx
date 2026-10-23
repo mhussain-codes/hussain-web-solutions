@@ -191,7 +191,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0 w-full"
+              className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-10 w-full"
             >
               {/* Project Image Column with Full-Page Screenshot Auto-Scroll on Hover */}
               <div
@@ -216,12 +216,12 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Text & Overlapping Frosted Glass Outline Column (Image 2 Structure) */}
+              {/* Text Column - Positioned cleanly with breathing space, without covering screenshot */}
               <div
                 className={`lg:col-span-5 w-full z-20 ${
                   isEven
-                    ? 'lg:order-1 lg:-mr-12'
-                    : 'lg:order-2 lg:-ml-12'
+                    ? 'lg:order-1 lg:pr-4'
+                    : 'lg:order-2 lg:pl-6 lg:ml-2'
                 }`}
               >
                 {/* Header Outline Information */}
@@ -343,21 +343,26 @@ const Projects = () => {
                     : 'border border-[#2A0E61] hover:border-purple-500/60 bg-[#08091a]/80 hover:-translate-y-1'
                 }`}
               >
-                {/* Image Preview */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-black/50 border-b border-[#2A0E61]/60">
+                {/* Image Preview with Smooth Auto-Scroll on Hover */}
+                <div className="fullpage-scroll-box compact-scroll-box relative w-full h-[220px] overflow-hidden bg-black/50 border-b border-[#2A0E61]/60">
                   <img
                     src={project.resolvedImage}
                     alt={project.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className="scrollable-img"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08091a] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08091a]/60 via-transparent to-transparent pointer-events-none" />
                   
                   {/* Category badge */}
-                  <div className="absolute top-3 right-3">
-                    <span className="px-2.5 py-1 text-[10px] font-bold text-white bg-purple-950/80 border border-purple-500/40 rounded-full backdrop-blur-md">
+                  <div className="absolute top-3 right-3 z-10">
+                    <span className="px-2.5 py-1 text-[10px] font-bold text-white bg-purple-950/80 border border-purple-500/40 rounded-full backdrop-blur-md shadow-sm">
                       {project.badge || project.category}
                     </span>
+                  </div>
+
+                  {/* Micro hover indicator badge */}
+                  <div className="absolute bottom-2.5 left-2.5 z-10 px-2 py-0.5 rounded-md bg-black/75 backdrop-blur-sm border border-white/10 text-[9px] text-purple-200 pointer-events-none transition-opacity duration-300 group-hover:opacity-20 flex items-center gap-1">
+                    <span>🖱️ Hover to scroll</span>
                   </div>
                 </div>
 

@@ -27,17 +27,17 @@ const ProjectCard = ({ project, index = 0, isFeatured = false }) => {
   return (
     <Reveal delay={index * 120}>
       <div className="cosmic-card flex flex-col h-full overflow-hidden group">
-        {/* Preview Container - Stable, no scaling jump on hover */}
-        <div className="relative aspect-[16/10] bg-[#070919] overflow-hidden border-b border-white/[0.06]">
+        {/* Preview Container with Smooth Auto-Scroll on Hover */}
+        <div className="fullpage-scroll-box compact-scroll-box relative w-full h-[220px] bg-[#070919] overflow-hidden border-b border-white/[0.06]">
           <img
             src={imgSrc}
             alt={`${project.name} preview showcase`}
-            className="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 transition-opacity duration-300"
+            className="scrollable-img"
             loading="lazy"
           />
 
           {/* Top Badge Overlay */}
-          <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
+          <div className="absolute top-3.5 left-3.5 flex items-center gap-2 z-10">
             <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-[#070814]/85 text-violet-300 border border-violet-500/30 backdrop-blur-md shadow-sm">
               {project.badge || project.category}
             </span>
@@ -46,6 +46,11 @@ const ProjectCard = ({ project, index = 0, isFeatured = false }) => {
                 Featured
               </span>
             )}
+          </div>
+
+          {/* Micro hover indicator badge */}
+          <div className="absolute bottom-2.5 right-2.5 z-10 px-2 py-0.5 rounded-md bg-black/75 backdrop-blur-sm border border-white/10 text-[9px] text-purple-200 pointer-events-none transition-opacity duration-300 group-hover:opacity-20 flex items-center gap-1">
+            <span>🖱️ Hover to scroll</span>
           </div>
         </div>
 
