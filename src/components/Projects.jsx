@@ -134,7 +134,7 @@ const Projects = () => {
 
   const allProjects = sortedProjects.map(p => ({
     ...p,
-    outlineText: p.description?.length > 90 ? p.description : (projectOutlines[p.id] || p.overview || p.description),
+    outlineText: projectOutlines[p.id] || p.overview || p.description,
     resolvedImage: resolveImage(p.image, p.id)
   }));
 
@@ -191,7 +191,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-10 w-full"
+              className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-12 w-full"
             >
               {/* Project Image Column with Full-Page Screenshot Auto-Scroll on Hover */}
               <div
@@ -216,12 +216,12 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Text Column - Positioned cleanly with breathing space, without covering screenshot */}
+              {/* Text Column - Strictly positioned on the side with zero overlap on the image */}
               <div
-                className={`lg:col-span-5 w-full z-20 ${
+                className={`lg:col-span-5 w-full z-20 flex flex-col justify-center ${
                   isEven
-                    ? 'lg:order-1 lg:pr-4'
-                    : 'lg:order-2 lg:pl-6 lg:ml-2'
+                    ? 'lg:order-1'
+                    : 'lg:order-2'
                 }`}
               >
                 {/* Header Outline Information */}
