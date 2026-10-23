@@ -39,23 +39,32 @@ const Chatbot = () => {
     setError(null);
 
     try {
-      const response = await fetch('/.netlify/functions/chat', {
+      let res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text })
+        body: JSON.stringify({ message: text, history: messages.slice(-4) })
       });
 
-      if (!response.ok) {
+      if (!res.ok) {
+        // Fallback for Netlify
+        res = await fetch('/.netlify/functions/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, history: messages.slice(-4) })
+        });
+      }
+
+      if (!res.ok) {
         throw new Error('Failed to fetch response');
       }
 
-      const data = await response.json();
+      const data = await res.json();
       setMessages(prev => [...prev, { role: 'assistant', content: data.reply }]);
     } catch (err) {
       console.error('Chat error:', err);
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: "AI assistant is temporarily resting. You can explore the featured projects above or reach M. Hussain directly via WhatsApp or the contact form.",
+        content: "I'm here to help! You can reach M. Hussain directly on WhatsApp at +92 325 5269 507, view his code on GitHub (https://github.com/mhussain-codes), or email hussainxwebsolutions@gmail.com for an immediate response.",
         isFallback: true
       }]);
     } finally {

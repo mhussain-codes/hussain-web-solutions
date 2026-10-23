@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import StarBackground from './StarBackground';
+import Chatbot from './Chatbot';
 
 const Layout = () => {
   const { pathname, hash } = useLocation();
@@ -29,6 +30,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 };
