@@ -3,24 +3,38 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import Reveal from './Reveal';
 
+const resolveImage = (img, id) => {
+  if (typeof img === 'string' && (img.startsWith('http') || img.startsWith('data:') || img.startsWith('/'))) {
+    return img;
+  }
+  const fallbackMap = {
+    'at-brand': '/images/at-brand.png',
+    'unique-match-maker': '/images/unique-match-maker.png',
+    'hussain-trade-signals-bot': '/images/trade-signals.png',
+    'trade-signals': '/images/trade-signals.png',
+    'timecraft-shopify-theme': '/images/timecraft.png',
+    'timecraft': '/images/timecraft.png',
+    'cherryflows': '/images/cherryflows.png',
+    'skillpathhub': '/images/skillpathhub.png',
+    'aqua-life': '/images/aqua-life.png',
+  };
+  return fallbackMap[id] || '/images/at-brand.png';
+};
+
 const ProjectCard = ({ project, index = 0, isFeatured = false }) => {
+  const imgSrc = resolveImage(project.image, project.id);
+
   return (
     <Reveal delay={index * 120}>
       <div className="cosmic-card flex flex-col h-full overflow-hidden group">
         {/* Preview Container - Stable, no scaling jump on hover */}
         <div className="relative aspect-[16/10] bg-[#070919] overflow-hidden border-b border-white/[0.06]">
-          {project.image ? (
-            <img
-              src={project.image}
-              alt={`${project.name} preview showcase`}
-              className="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 transition-opacity duration-300"
-              loading="lazy"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-[#0d1026] text-slate-400 font-medium">
-              {project.name}
-            </div>
-          )}
+          <img
+            src={imgSrc}
+            alt={`${project.name} preview showcase`}
+            className="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 transition-opacity duration-300"
+            loading="lazy"
+          />
 
           {/* Top Badge Overlay */}
           <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
