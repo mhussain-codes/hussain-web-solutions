@@ -77,6 +77,19 @@ const defaultAboutData = {
 
 const ContentContext = createContext(null);
 
+// Helper to safely re-attach icon components when loaded from localStorage
+const hydrateServices = (rawServices) => {
+  if (!Array.isArray(rawServices) || rawServices.length === 0) return defaultServices;
+  return rawServices.map(s => {
+    const defaultMatch = defaultServices.find(d => d.id === s.id);
+    return {
+      ...defaultMatch,
+      ...s,
+      icon: (typeof s.icon === 'function' ? s.icon : defaultMatch?.icon) || defaultServices[0]?.icon
+    };
+  });
+};
+
 export const ContentProvider = ({ children }) => {
   // Load initial content from localStorage or defaults
   const [content, setContent] = useState(() => {
@@ -88,7 +101,7 @@ export const ContentProvider = ({ children }) => {
           siteInfo: parsed.siteInfo || defaultSiteInfo,
           heroData: parsed.heroData || defaultHeroData,
           projects: parsed.projects || defaultProjects,
-          services: parsed.services || defaultServices,
+          services: hydrateServices(parsed.services || defaultServices),
           processSteps: parsed.processSteps || defaultProcessSteps,
           aboutData: parsed.aboutData || defaultAboutData,
           faq: parsed.faq || defaultFaq,

@@ -3,7 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import StarBackground from './StarBackground';
-import Chatbot from './Chatbot';
+import ErrorBoundary from './ErrorBoundary';
 
 const Layout = () => {
   const { pathname, hash } = useLocation();
@@ -27,10 +27,11 @@ const Layout = () => {
       <StarBackground />
       <Header />
       <main className="flex-grow z-10">
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </main>
       <Footer />
-      <Chatbot />
     </div>
   );
 };
