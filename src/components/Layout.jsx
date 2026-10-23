@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import StarBackground from './StarBackground';
 
 const Layout = () => {
   const { pathname, hash } = useLocation();
-  const [transitionStage, setTransitionStage] = useState("page-enter-active");
 
   useEffect(() => {
     if (hash) {
@@ -19,17 +19,13 @@ const Layout = () => {
       }
     }
     window.scrollTo(0, 0);
-    setTransitionStage("page-enter");
-    const timer = setTimeout(() => {
-      setTransitionStage("page-enter-active");
-    }, 40);
-    return () => clearTimeout(timer);
   }, [pathname, hash]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#070814] text-slate-100 selection:bg-violet-600/30 selection:text-white">
+    <div className="flex flex-col min-h-screen bg-[#030014] text-slate-100 overflow-x-hidden selection:bg-purple-600/30 selection:text-white relative">
+      <StarBackground />
       <Header />
-      <main className={`flex-grow ${transitionStage}`}>
+      <main className="flex-grow z-10">
         <Outlet />
       </main>
       <Footer />

@@ -1,146 +1,164 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import React, { useState } from 'react';
 import { useContent } from '../context/ContentContext';
+import { 
+  RxGithubLogo, 
+  RxLinkedinLogo 
+} from 'react-icons/rx';
+import { FaWhatsapp, FaFacebook } from 'react-icons/fa';
 
 const Header = () => {
   const { siteInfo } = useContent();
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  const navLinks = [
+    { title: 'About me', link: '#about-me' },
+    { title: 'Skills', link: '#skills' },
+    { title: 'Projects', link: '#projects' },
+  ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Handle in-page smooth scrolling or route navigation
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    closeMenu();
-
-    if (location.pathname === '/') {
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    setIsMobileMenuOpen(false);
+    const element = document.querySelector(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     } else {
-      navigate(`/#${targetId}`);
+      window.location.hash = targetId;
     }
   };
 
-  const navItems = [
-    { label: 'Work', targetId: 'work', path: '/work' },
-    { label: 'Services', targetId: 'services', path: '/services' },
-    { label: 'Process', targetId: 'process', path: '/#process' },
-    { label: 'About', targetId: 'about', path: '/about' },
-    { label: 'FAQ', targetId: 'faq', path: '/faq' },
-  ];
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#070814]/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
-          : 'bg-[#070814]/40 backdrop-blur-md border-b border-transparent py-5'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo / Entity Identity */}
-          <Link
-            to="/"
-            onClick={closeMenu}
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-violet-400 rounded-lg p-1"
-          >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-700 flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(139,92,246,0.5)] border border-violet-400/30 group-hover:shadow-[0_0_22px_rgba(139,92,246,0.8)] transition-all">
-              <span className="text-base tracking-tight font-extrabold">H</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-violet-300 transition-colors">
-                {siteInfo.brandName}
-              </span>
-              <span className="text-[10px] tracking-wider uppercase text-slate-400 font-medium hidden sm:inline-block">
-                Web Dev &bull; Shopify &bull; Automation
-              </span>
-            </div>
-          </Link>
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-4 sm:px-10">
+      <div className="w-full h-full flex items-center justify-between m-auto max-w-7xl">
+        {/* Logo + Name */}
+        <a
+          href="#about-me"
+          onClick={(e) => handleNavClick(e, '#about-me')}
+          className="flex items-center gap-2 group cursor-pointer"
+        >
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="w-10 h-10 object-contain cursor-pointer transition-transform group-hover:scale-110"
+          />
+          <div className="font-bold text-gray-200 tracking-wide text-sm sm:text-base group-hover:text-purple-400 transition-colors">
+            {siteInfo?.founder || "M. Hussain"}
+          </div>
+        </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2 bg-white/[0.03] border border-white/[0.06] rounded-full px-4 py-1.5 backdrop-blur-md">
-            {navItems.map((item) => (
+        {/* Center Glass Nav Pill */}
+        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between">
+          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] rounded-full text-gray-200 text-sm shadow-inner shadow-[#a48fff1f]">
+            {navLinks.map((link) => (
               <a
-                key={item.label}
-                href={`#${item.targetId}`}
-                onClick={(e) => handleNavClick(e, item.targetId)}
-                className="px-3.5 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-violet-400"
+                key={link.title}
+                href={link.link}
+                onClick={(e) => handleNavClick(e, link.link)}
+                className="cursor-pointer hover:text-[#b49bff] transition-colors font-medium px-2 py-0.5"
               >
-                {item.label}
+                {link.title}
               </a>
             ))}
-          </nav>
 
-          {/* Contact / CTA Button */}
-          <div className="hidden md:flex items-center gap-3">
             <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, 'contact')}
-              className="btn-primary py-2 px-5 text-xs lg:text-sm"
+              href="https://github.com/mhussain-codes/hussain-web-solutions"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="cursor-pointer hover:text-[#b49bff] transition-colors font-medium px-2 py-0.5"
             >
-              Start a Project
-              <ArrowUpRight size={15} />
+              Source Code
             </a>
           </div>
+        </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="md:hidden p-2 text-slate-300 hover:text-white hover:bg-white/[0.06] rounded-xl border border-white/[0.08] focus:outline-none focus:ring-2 focus:ring-violet-400"
-            aria-label="Toggle navigation menu"
-            aria-expanded={isOpen}
+        {/* Social Icons (Desktop) */}
+        <div className="hidden md:flex flex-row items-center gap-4">
+          <a
+            href="https://github.com/mhussain-codes"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-gray-300 hover:text-white hover:scale-110 transition-all p-1"
+            aria-label="GitHub"
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+            <RxGithubLogo className="h-5 w-5" />
+          </a>
+          <a
+            href={siteInfo?.contact?.linkedin || "https://linkedin.com"}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-gray-300 hover:text-[#0077b5] hover:scale-110 transition-all p-1"
+            aria-label="LinkedIn"
+          >
+            <RxLinkedinLogo className="h-5 w-5" />
+          </a>
+          <a
+            href={`${siteInfo?.contact?.whatsappLink || 'https://wa.me/923255269507'}?text=${encodeURIComponent(siteInfo?.contact?.defaultMessage || 'Hi Hussain')}`}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-gray-300 hover:text-emerald-400 hover:scale-110 transition-all p-1"
+            aria-label="WhatsApp"
+          >
+            <FaWhatsapp className="h-5 w-5" />
+          </a>
+          <a
+            href={siteInfo?.contact?.facebook || "https://facebook.com"}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-gray-300 hover:text-[#1877f2] hover:scale-110 transition-all p-1"
+            aria-label="Facebook"
+          >
+            <FaFacebook className="h-5 w-5" />
+          </a>
         </div>
+
+        {/* Hamburger Menu for Mobile */}
+        <button
+          className="md:hidden text-white focus:outline-none p-2 text-2xl"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? '✕' : '☰'}
+        </button>
       </div>
 
-      {/* Mobile Drawer */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-white/[0.08] bg-[#070814]/95 backdrop-blur-2xl ${
-          isOpen ? 'max-h-96 opacity-100 py-5' : 'max-h-0 opacity-0 py-0'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 space-y-3">
-          {navItems.map((item) => (
+      {/* Mobile Menu Drawer */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-[65px] left-0 w-full bg-[#030014]/95 backdrop-blur-xl border-b border-[#7042f840] p-6 flex flex-col items-center text-gray-200 md:hidden z-50">
+          <div className="flex flex-col items-center gap-4 text-sm font-medium w-full">
+            {navLinks.map((link) => (
+              <a
+                key={link.title}
+                href={link.link}
+                onClick={(e) => handleNavClick(e, link.link)}
+                className="cursor-pointer hover:text-[#b49bff] py-2 w-full text-center transition"
+              >
+                {link.title}
+              </a>
+            ))}
             <a
-              key={item.label}
-              href={`#${item.targetId}`}
-              onClick={(e) => handleNavClick(e, item.targetId)}
-              className="block px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] rounded-lg transition-colors"
+              href="https://github.com/mhussain-codes/hussain-web-solutions"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="cursor-pointer hover:text-[#b49bff] py-2 w-full text-center transition"
             >
-              {item.label}
+              Source Code
             </a>
-          ))}
-          <div className="pt-3 border-t border-white/[0.08]">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, 'contact')}
-              className="btn-primary w-full text-center py-2.5 text-sm"
-            >
-              Start a Project
-              <ArrowUpRight size={16} />
+          </div>
+
+          <div className="flex justify-center items-center gap-6 mt-6 pt-4 border-t border-white/10 w-full">
+            <a href="https://github.com/mhussain-codes" target="_blank" rel="noreferrer noopener" className="text-white hover:text-purple-400">
+              <RxGithubLogo className="h-6 w-6" />
+            </a>
+            <a href={siteInfo?.contact?.linkedin || "https://linkedin.com"} target="_blank" rel="noreferrer noopener" className="text-white hover:text-purple-400">
+              <RxLinkedinLogo className="h-6 w-6" />
+            </a>
+            <a href={siteInfo?.contact?.whatsappLink || "https://wa.me/923255269507"} target="_blank" rel="noreferrer noopener" className="text-white hover:text-emerald-400">
+              <FaWhatsapp className="h-6 w-6" />
             </a>
           </div>
         </div>
-      </div>
-    </header>
+      )}
+    </div>
   );
 };
 
