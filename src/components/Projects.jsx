@@ -5,16 +5,22 @@ import { useContent } from '../context/ContentContext';
 
 // Safe image resolver to ensure images always load
 const resolveImage = (img, id) => {
+  if (id === 'timecraft-shopify-theme' || id === 'timecraft') {
+    return '/images/timecraft-full.png';
+  }
+  if (id === 'unique-match-maker') {
+    return '/images/unique-match-maker-full.png';
+  }
   if (typeof img === 'string' && (img.startsWith('http') || img.startsWith('data:') || img.startsWith('/'))) {
     return img;
   }
   const fallbackMap = {
+    'timecraft-shopify-theme': '/images/timecraft-full.png',
+    'timecraft': '/images/timecraft-full.png',
+    'unique-match-maker': '/images/unique-match-maker-full.png',
     'at-brand': '/images/at-brand.png',
-    'unique-match-maker': '/images/unique-match-maker.png',
     'hussain-trade-signals-bot': '/images/trade-signals.png',
     'trade-signals': '/images/trade-signals.png',
-    'timecraft-shopify-theme': '/images/timecraft.png',
-    'timecraft': '/images/timecraft.png',
     'cherryflows': '/images/cherryflows.png',
     'skillpathhub': '/images/skillpathhub.png',
     'aqua-life': '/images/aqua-life.png',
@@ -39,16 +45,16 @@ const Projects = () => {
   };
 
   // All 7 projects with resolved images and comprehensive outlines
-  const allProjects = (projects && projects.length > 0 ? projects : [
+  const rawProjects = (projects && projects.length > 0 ? projects : [
     {
-      id: 'at-brand',
-      name: 'AT Brand – Modern E-Commerce Storefront',
+      id: 'timecraft-shopify-theme',
+      name: 'Timecraft – Luxury Watchmaker Shopify Theme',
       badge: 'Shopify Storefront',
       category: 'E-Commerce',
-      description: projectOutlines['at-brand'],
-      image: '/images/at-brand.png',
-      url: 'https://atbrand.store',
-      technologies: ['Shopify', 'Liquid', 'Tailwind CSS', 'JavaScript', 'E-Commerce']
+      description: projectOutlines['timecraft-shopify-theme'],
+      image: '/images/timecraft-full.png',
+      url: 'https://mhussain-codes.github.io/timecraft-shopify-theme/demo-preview/',
+      technologies: ['Shopify', 'Liquid', 'Cart Drawer', 'Performance']
     },
     {
       id: 'unique-match-maker',
@@ -56,7 +62,7 @@ const Projects = () => {
       badge: 'Full Stack React App',
       category: 'Web Applications',
       description: projectOutlines['unique-match-maker'],
-      image: '/images/unique-match-maker.png',
+      image: '/images/unique-match-maker-full.png',
       url: 'https://unique-match-maker.vercel.app/',
       technologies: ['React 19', 'Vite', 'Tailwind CSS', 'Responsive UI']
     },
@@ -71,16 +77,6 @@ const Projects = () => {
       technologies: ['React', 'Financial APIs', 'Telegram Alerts', 'Automation']
     },
     {
-      id: 'timecraft-shopify-theme',
-      name: 'Timecraft – Luxury Watchmaker Shopify Theme',
-      badge: 'Shopify Storefront',
-      category: 'E-Commerce',
-      description: projectOutlines['timecraft-shopify-theme'],
-      image: '/images/timecraft.png',
-      url: 'https://mhussain-codes.github.io/timecraft-shopify-theme/demo-preview/',
-      technologies: ['Shopify', 'Liquid', 'Cart Drawer', 'Performance']
-    },
-    {
       id: 'cherryflows',
       name: 'CherryFlows – AI Automation Agency Portal',
       badge: 'Agency Website',
@@ -89,6 +85,16 @@ const Projects = () => {
       image: '/images/cherryflows.png',
       url: 'https://cherryflows.com/',
       technologies: ['WordPress', 'Elementor Pro', 'Booking Engine']
+    },
+    {
+      id: 'at-brand',
+      name: 'AT Brand – Modern E-Commerce Storefront',
+      badge: 'Shopify Storefront',
+      category: 'E-Commerce',
+      description: projectOutlines['at-brand'],
+      image: '/images/at-brand.png',
+      url: 'https://atbrand.store',
+      technologies: ['Shopify', 'Liquid', 'Tailwind CSS', 'JavaScript', 'E-Commerce']
     },
     {
       id: 'skillpathhub',
@@ -110,7 +116,21 @@ const Projects = () => {
       url: 'https://paleturquoise-coyote-717141.hostingersite.com/',
       technologies: ['Web Design', 'B2B Lead Flow', 'Tailwind CSS']
     }
-  ]).map(p => ({
+  ]);
+
+  // Ensure Timecraft and Unique Match Maker are always top 2 featured projects
+  const sortedProjects = [...rawProjects].sort((a, b) => {
+    const priority = {
+      'timecraft-shopify-theme': 1,
+      'timecraft': 1,
+      'unique-match-maker': 2
+    };
+    const pA = priority[a.id] || 99;
+    const pB = priority[b.id] || 99;
+    return pA - pB;
+  });
+
+  const allProjects = sortedProjects.map(p => ({
     ...p,
     outlineText: p.description?.length > 90 ? p.description : (projectOutlines[p.id] || p.overview || p.description),
     resolvedImage: resolveImage(p.image, p.id)
@@ -171,19 +191,26 @@ const Projects = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0"
             >
-              {/* Project Image Column */}
+              {/* Project Image Column with Full-Page Screenshot Auto-Scroll on Hover */}
               <div
                 className={`lg:col-span-7 relative rounded-3xl overflow-hidden border border-[#2A0E61] bg-[#0c0f26]/80 shadow-[0_0_50px_rgba(112,66,248,0.25)] group ${
                   isEven ? 'lg:order-2 lg:ml-auto' : 'lg:order-1 lg:mr-auto'
                 }`}
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="fullpage-scroll-box h-[380px] sm:h-[460px] w-full relative overflow-hidden bg-black/40">
                   <img
                     src={project.resolvedImage}
                     alt={project.name}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="scrollable-img"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#030014]/50 via-transparent to-purple-900/20 pointer-events-none" />
+                  {/* Floating Hover Indicator Badge */}
+                  <div className="absolute top-3.5 right-3.5 z-10 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-purple-500/30 text-[11px] text-purple-200 font-medium pointer-events-none transition-opacity duration-300 group-hover:opacity-30 flex items-center gap-1.5 shadow-lg">
+                    <span className="animate-pulse">🖱️</span>
+                    <span>Hover to preview full page</span>
+                  </div>
+                  {/* Bottom Vignette Gradient */}
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#08091a]/80 to-transparent pointer-events-none" />
                 </div>
               </div>
 
