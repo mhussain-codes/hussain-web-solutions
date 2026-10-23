@@ -54,18 +54,25 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  width: 100%;
+  display: block;
+  background-color: #070918;
 }
 
 .fullpage-scroll-box img.scrollable-img {
   width: 100%;
   height: auto;
   min-height: 100%;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
+  object-fit: cover;
+  object-position: top center;
   transform: translateY(0%);
-  transition: transform 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  pointer-events: none;
 }
 
 .fullpage-scroll-box:hover img.scrollable-img {
@@ -74,7 +81,7 @@
 
 @media (min-width: 640px) {
   .fullpage-scroll-box:hover img.scrollable-img {
-    transform: translateY(calc(-100% + 440px));
+    transform: translateY(calc(-100% + 460px));
   }
 }
 

@@ -2,22 +2,24 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Globe, ChevronLeft, ChevronRight, Sparkles, Layers } from 'lucide-react';
 import { useContent } from '../context/ContentContext';
+import timecraftFullImg from '../assets/images/timecraft-full.png';
+import uniqueMatchFullImg from '../assets/images/unique-match-maker-full.png';
 
 // Safe image resolver to ensure images always load
 const resolveImage = (img, id) => {
   if (id === 'timecraft-shopify-theme' || id === 'timecraft') {
-    return '/images/timecraft-full.png';
+    return timecraftFullImg || '/images/timecraft-full.png';
   }
   if (id === 'unique-match-maker') {
-    return '/images/unique-match-maker-full.png';
+    return uniqueMatchFullImg || '/images/unique-match-maker-full.png';
   }
   if (typeof img === 'string' && (img.startsWith('http') || img.startsWith('data:') || img.startsWith('/'))) {
     return img;
   }
   const fallbackMap = {
-    'timecraft-shopify-theme': '/images/timecraft-full.png',
-    'timecraft': '/images/timecraft-full.png',
-    'unique-match-maker': '/images/unique-match-maker-full.png',
+    'timecraft-shopify-theme': timecraftFullImg || '/images/timecraft-full.png',
+    'timecraft': timecraftFullImg || '/images/timecraft-full.png',
+    'unique-match-maker': uniqueMatchFullImg || '/images/unique-match-maker-full.png',
     'at-brand': '/images/at-brand.png',
     'hussain-trade-signals-bot': '/images/trade-signals.png',
     'trade-signals': '/images/trade-signals.png',
@@ -189,12 +191,12 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0"
+              className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0 w-full"
             >
               {/* Project Image Column with Full-Page Screenshot Auto-Scroll on Hover */}
               <div
-                className={`lg:col-span-7 relative rounded-3xl overflow-hidden border border-[#2A0E61] bg-[#0c0f26]/80 shadow-[0_0_50px_rgba(112,66,248,0.25)] group ${
-                  isEven ? 'lg:order-2 lg:ml-auto' : 'lg:order-1 lg:mr-auto'
+                className={`lg:col-span-7 w-full relative rounded-3xl overflow-hidden border border-[#2A0E61] bg-[#0c0f26]/80 shadow-[0_0_50px_rgba(112,66,248,0.25)] group ${
+                  isEven ? 'lg:order-2' : 'lg:order-1'
                 }`}
               >
                 <div className="fullpage-scroll-box h-[380px] sm:h-[460px] w-full relative overflow-hidden bg-black/40">
@@ -216,10 +218,10 @@ const Projects = () => {
 
               {/* Text & Overlapping Frosted Glass Outline Column (Image 2 Structure) */}
               <div
-                className={`lg:col-span-6 z-20 ${
+                className={`lg:col-span-5 w-full z-20 ${
                   isEven
-                    ? 'lg:order-1 lg:mr-[-60px]'
-                    : 'lg:order-2 lg:ml-[-60px]'
+                    ? 'lg:order-1 lg:-mr-12'
+                    : 'lg:order-2 lg:-ml-12'
                 }`}
               >
                 {/* Header Outline Information */}
