@@ -713,6 +713,68 @@ const Admin = () => {
                       />
                     </div>
 
+                    {/* Image Management Section */}
+                    <div className="space-y-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
+                      <div className="flex items-center justify-between">
+                        <label className="block text-xs font-semibold text-slate-300">
+                          Project Screenshot / Image URL
+                        </label>
+                        <span className="text-[10px] text-purple-400 font-mono">PNG / JPG / WebP / Preset</span>
+                      </div>
+                      
+                      <input
+                        type="text"
+                        value={typeof editingProject.image === 'string' ? editingProject.image : ''}
+                        onChange={(e) => setEditingProject({ ...editingProject, image: e.target.value })}
+                        placeholder="/images/at-brand.png or https://..."
+                        className="w-full px-3 py-2 rounded-xl bg-white/[0.04] border border-white/[0.1] text-white text-sm focus:border-purple-400"
+                      />
+
+                      {/* Quick Preset Selector */}
+                      <div>
+                        <span className="text-[11px] text-slate-400 block mb-1.5">Or choose from portfolio presets:</span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {[
+                            { label: 'AT Brand', path: '/images/at-brand.png' },
+                            { label: 'Unique Match', path: '/images/unique-match-maker.png' },
+                            { label: 'Trade Signals', path: '/images/trade-signals.png' },
+                            { label: 'Timecraft', path: '/images/timecraft.png' },
+                            { label: 'CherryFlows', path: '/images/cherryflows.png' },
+                            { label: 'SkillPathHub', path: '/images/skillpathhub.png' },
+                            { label: 'Aqua Life', path: '/images/aqua-life.png' },
+                          ].map(preset => (
+                            <button
+                              key={preset.path}
+                              type="button"
+                              onClick={() => setEditingProject({ ...editingProject, image: preset.path })}
+                              className={`px-2.5 py-1 text-[11px] rounded-lg border transition-all cursor-pointer ${
+                                editingProject.image === preset.path
+                                  ? 'bg-purple-600/40 border-purple-500 text-white font-semibold'
+                                  : 'bg-white/[0.04] border-white/10 text-slate-400 hover:text-white'
+                              }`}
+                            >
+                              {preset.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Live Image Preview */}
+                      {editingProject.image && (
+                        <div className="mt-3">
+                          <span className="text-[11px] text-slate-400 block mb-1">Live Image Preview:</span>
+                          <div className="w-full h-36 rounded-xl overflow-hidden border border-white/10 bg-black/40">
+                            <img
+                              src={editingProject.image}
+                              alt="Preview"
+                              className="w-full h-full object-cover object-top"
+                              onError={(e) => { e.target.style.display = 'none'; }}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
                     <div className="flex items-center gap-3 pt-2">
                       <input
                         type="checkbox"
