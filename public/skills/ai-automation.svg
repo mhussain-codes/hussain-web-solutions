@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1035" />
+      <stop offset="50%" stop-color="#2D1254" />
+      <stop offset="100%" stop-color="#0F0826" />
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#EC4899" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Container Glass Card -->
+  <rect width="480" height="480" x="16" y="16" rx="100" fill="url(#aiBg)" stroke="#8B5CF6" stroke-width="6" stroke-opacity="0.4" />
+
+  <!-- Connected Workflow Connector Lines -->
+  <!-- Left trigger to central AI node -->
+  <path d="M120 256 H230" stroke="url(#lineGrad)" stroke-width="12" stroke-linecap="round" />
+  <!-- Central AI node to Top Action -->
+  <path d="M280 230 L370 150" stroke="url(#lineGrad)" stroke-width="12" stroke-linecap="round" />
+  <!-- Central AI node to Bottom Action -->
+  <path d="M280 282 L370 362" stroke="url(#lineGrad)" stroke-width="12" stroke-linecap="round" />
+
+  <!-- Left Node (Input / Trigger) -->
+  <circle cx="120" cy="256" r="38" fill="#181028" stroke="#8B5CF6" stroke-width="8" filter="url(#glow)" />
+  <circle cx="120" cy="256" r="16" fill="#A855F7" />
+
+  <!-- Central Node (AI Engine / Brain Core) -->
+  <circle cx="256" cy="256" r="62" fill="url(#nodeGrad)" filter="url(#glow)" />
+  <!-- AI 4-point Sparkle in Center -->
+  <path fill="#FFFFFF" d="M256 216C256 238 238 256 216 256C238 256 256 274 256 296C256 274 274 256 296 256C274 256 256 238 256 216Z" />
+  <circle cx="282" cy="226" r="5" fill="#FFFFFF" />
+  <circle cx="230" cy="286" r="4" fill="#FFFFFF" />
+
+  <!-- Top-Right Node (Automated Output A) -->
+  <circle cx="390" cy="140" r="40" fill="#181028" stroke="#06B6D4" stroke-width="8" filter="url(#glow)" />
+  <circle cx="390" cy="140" r="16" fill="#22D3EE" />
+
+  <!-- Bottom-Right Node (Automated Output B) -->
+  <circle cx="390" cy="372" r="40" fill="#181028" stroke="#EC4899" stroke-width="8" filter="url(#glow)" />
+  <circle cx="390" cy="372" r="16" fill="#F472B6" />
+</svg>
