@@ -1216,12 +1216,41 @@ const Admin = () => {
                   <label className="block text-xs font-semibold text-slate-300 mb-1.5">Facebook Page URL</label>
                   <input
                     type="url"
-                    value={localSiteInfo.contact.facebook}
+                    value={localSiteInfo.contact.facebook || ''}
                     onChange={(e) => setLocalSiteInfo({
                       ...localSiteInfo,
                       contact: { ...localSiteInfo.contact, facebook: e.target.value }
                     })}
                     className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.1] text-white text-sm outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Instagram Profile URL</label>
+                  <input
+                    type="url"
+                    value={localSiteInfo.contact.instagram || ''}
+                    onChange={(e) => setLocalSiteInfo({
+                      ...localSiteInfo,
+                      contact: { ...localSiteInfo.contact, instagram: e.target.value }
+                    })}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.1] text-white text-sm outline-none"
+                    placeholder="https://www.instagram.com/..."
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Twitter / X URL</label>
+                  <input
+                    type="url"
+                    value={localSiteInfo.contact.twitter || ''}
+                    onChange={(e) => setLocalSiteInfo({
+                      ...localSiteInfo,
+                      contact: { ...localSiteInfo.contact, twitter: e.target.value }
+                    })}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.1] text-white text-sm outline-none"
+                    placeholder="https://x.com/..."
                   />
                 </div>
               </div>

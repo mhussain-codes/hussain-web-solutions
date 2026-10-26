@@ -10,7 +10,9 @@ export const siteInfo = {
     whatsappLink: "https://wa.me/923255269507",
     defaultMessage: "Hi M. Hussain, I found Hussain Web Solutions and I'd like to discuss a website or automation project.",
     linkedin: "https://www.linkedin.com/in/hussain-awan-b64314282/",
-    facebook: "https://www.facebook.com/hussainwebstudio/",
+    facebook: "https://www.facebook.com/share/19fZxJZbJv/",
+    instagram: "https://www.instagram.com/hussainxwebsolutions?cplk=MWs1MGpkaTh5MTllMA==",
+    twitter: "https://x.com/hussainawann",
     email: "hussainxwebsolutions@gmail.com",
     location: "Remote / Available Globally"
   },

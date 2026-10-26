@@ -6,7 +6,10 @@ export const VERIFIED_CONTACTS = {
   whatsappUrl: "https://wa.me/923255269507",
   callUrl: "tel:+923255269507",
   githubUrl: "https://github.com/mhussain-codes",
-  linkedinUrl: "https://www.linkedin.com/in/hussain-awan-b64314282/"
+  linkedinUrl: "https://www.linkedin.com/in/hussain-awan-b64314282/",
+  instagramUrl: "https://www.instagram.com/hussainxwebsolutions?cplk=MWs1MGpkaTh5MTllMA==",
+  twitterUrl: "https://x.com/hussainawann",
+  facebookUrl: "https://www.facebook.com/share/19fZxJZbJv/"
 };
 
 export const VERIFIED_PROJECTS = [
@@ -91,7 +94,7 @@ export function getFastInstantAnswer(query) {
     q.includes('kaise baat')
   ) {
     return {
-      text: `You can reach M. Hussain directly via:\n\n• **WhatsApp:** [Chat on WhatsApp (${VERIFIED_CONTACTS.phone})](${VERIFIED_CONTACTS.whatsappUrl})\n• **Direct Call:** [${VERIFIED_CONTACTS.phone}](${VERIFIED_CONTACTS.callUrl})\n• **LinkedIn:** [Hussain Awan on LinkedIn](${VERIFIED_CONTACTS.linkedinUrl})\n• **GitHub:** [mhussain-codes](${VERIFIED_CONTACTS.githubUrl})\n\nFeel free to send a message on WhatsApp anytime!`,
+      text: `You can reach M. Hussain directly via:\n\n• **WhatsApp:** [Chat on WhatsApp (${VERIFIED_CONTACTS.phone})](${VERIFIED_CONTACTS.whatsappUrl})\n• **Direct Call:** [${VERIFIED_CONTACTS.phone}](${VERIFIED_CONTACTS.callUrl})\n• **LinkedIn:** [Hussain Awan on LinkedIn](${VERIFIED_CONTACTS.linkedinUrl})\n• **Instagram:** [Instagram Profile](${VERIFIED_CONTACTS.instagramUrl})\n• **Twitter (X):** [Twitter / X](${VERIFIED_CONTACTS.twitterUrl})\n• **Facebook:** [Facebook Page](${VERIFIED_CONTACTS.facebookUrl})\n• **GitHub:** [mhussain-codes](${VERIFIED_CONTACTS.githubUrl})\n\nFeel free to send a message on WhatsApp anytime!`,
       action: 'contact'
     };
   }

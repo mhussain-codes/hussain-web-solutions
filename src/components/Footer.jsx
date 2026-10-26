@@ -7,7 +7,7 @@ import {
   RxTwitterLogo,
   RxLinkedinLogo,
 } from 'react-icons/rx';
-import { FaYoutube } from 'react-icons/fa';
+import { FaYoutube, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
   const { siteInfo } = useContent();
@@ -40,17 +40,22 @@ const Footer = () => {
         {
           name: 'Instagram',
           icon: RxInstagramLogo,
-          link: 'https://instagram.com',
+          link: siteInfo?.contact?.instagram || 'https://www.instagram.com/hussainxwebsolutions?cplk=MWs1MGpkaTh5MTllMA==',
         },
         {
-          name: 'Twitter',
+          name: 'Twitter (X)',
           icon: RxTwitterLogo,
-          link: 'https://twitter.com',
+          link: siteInfo?.contact?.twitter || 'https://x.com/hussainawann',
+        },
+        {
+          name: 'Facebook',
+          icon: FaFacebook,
+          link: siteInfo?.contact?.facebook || 'https://www.facebook.com/share/19fZxJZbJv/',
         },
         {
           name: 'Linkedin',
           icon: RxLinkedinLogo,
-          link: siteInfo?.contact?.linkedin || 'https://linkedin.com',
+          link: siteInfo?.contact?.linkedin || 'https://www.linkedin.com/in/hussain-awan-b64314282/',
         },
       ],
     },

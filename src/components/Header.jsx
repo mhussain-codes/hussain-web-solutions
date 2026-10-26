@@ -3,7 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
 import { 
   RxGithubLogo, 
-  RxLinkedinLogo 
+  RxLinkedinLogo,
+  RxInstagramLogo
 } from 'react-icons/rx';
 import { FaWhatsapp } from 'react-icons/fa';
 import { ArrowUpRight } from 'lucide-react';
@@ -106,6 +107,15 @@ const Header = () => {
               <RxLinkedinLogo className="h-5 w-5" />
             </a>
             <a
+              href={siteInfo?.contact?.instagram || "https://www.instagram.com/hussainxwebsolutions?cplk=MWs1MGpkaTh5MTllMA=="}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-gray-400 hover:text-pink-400 hover:scale-110 transition-all p-1"
+              aria-label="Instagram Profile"
+            >
+              <RxInstagramLogo className="h-5 w-5" />
+            </a>
+            <a
               href={`${siteInfo?.contact?.whatsappLink || 'https://wa.me/923255269507'}?text=${encodeURIComponent(siteInfo?.contact?.defaultMessage || 'Hi Hussain')}`}
               target="_blank"
               rel="noreferrer noopener"
@@ -166,13 +176,16 @@ const Header = () => {
             </Link>
 
             <div className="flex justify-center items-center gap-5 pt-2">
-              <a href="https://github.com/mhussain-codes" target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-white">
+              <a href="https://github.com/mhussain-codes" target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-white" aria-label="GitHub">
                 <RxGithubLogo className="h-5 w-5" />
               </a>
-              <a href={siteInfo?.contact?.linkedin || "https://linkedin.com"} target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-[#0077b5]">
+              <a href={siteInfo?.contact?.linkedin || "https://linkedin.com"} target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-[#0077b5]" aria-label="LinkedIn">
                 <RxLinkedinLogo className="h-5 w-5" />
               </a>
-              <a href={siteInfo?.contact?.whatsappLink || "https://wa.me/923255269507"} target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-emerald-400">
+              <a href={siteInfo?.contact?.instagram || "https://www.instagram.com/hussainxwebsolutions?cplk=MWs1MGpkaTh5MTllMA=="} target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-pink-400" aria-label="Instagram">
+                <RxInstagramLogo className="h-5 w-5" />
+              </a>
+              <a href={siteInfo?.contact?.whatsappLink || "https://wa.me/923255269507"} target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-emerald-400" aria-label="WhatsApp">
                 <FaWhatsapp className="h-5 w-5" />
               </a>
             </div>

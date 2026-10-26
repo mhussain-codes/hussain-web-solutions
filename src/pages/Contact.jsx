@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MessageCircle, Mail, Send, CheckCircle2, Globe2, Clock } from 'lucide-react';
+import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { useContent } from '../context/ContentContext';
 import Reveal from '../components/Reveal';
 import SEO from '../components/SEO';
@@ -152,6 +153,43 @@ const Contact = () => {
                   </p>
                 </div>
               </a>
+
+              {/* Social Channels */}
+              <div className="pt-2 grid grid-cols-3 gap-2.5">
+                {siteInfo.contact.instagram && (
+                  <a
+                    href={siteInfo.contact.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center py-2.5 px-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-pink-500/40 hover:bg-pink-500/10 transition-all text-slate-200 group text-center"
+                  >
+                    <FaInstagram className="text-pink-400 text-lg mb-1 group-hover:scale-110 transition-transform" />
+                    <span className="text-[11px] font-medium text-slate-300 group-hover:text-pink-300">Instagram</span>
+                  </a>
+                )}
+                {siteInfo.contact.twitter && (
+                  <a
+                    href={siteInfo.contact.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center py-2.5 px-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-sky-500/40 hover:bg-sky-500/10 transition-all text-slate-200 group text-center"
+                  >
+                    <FaTwitter className="text-sky-400 text-lg mb-1 group-hover:scale-110 transition-transform" />
+                    <span className="text-[11px] font-medium text-slate-300 group-hover:text-sky-300">Twitter (X)</span>
+                  </a>
+                )}
+                {siteInfo.contact.facebook && (
+                  <a
+                    href={siteInfo.contact.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center py-2.5 px-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-blue-500/40 hover:bg-blue-500/10 transition-all text-slate-200 group text-center"
+                  >
+                    <FaFacebook className="text-blue-400 text-lg mb-1 group-hover:scale-110 transition-transform" />
+                    <span className="text-[11px] font-medium text-slate-300 group-hover:text-blue-300">Facebook</span>
+                  </a>
+                )}
+              </div>
             </div>
 
             <div className="pt-4 border-t border-white/[0.06] space-y-2 text-xs text-slate-400">
