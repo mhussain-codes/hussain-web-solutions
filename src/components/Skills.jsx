@@ -11,9 +11,9 @@ const SKILL_DATA = [
   { name: 'React', image: 'react.png', width: 70, height: 70 },
   { name: 'WordPress', image: 'wordpress.svg', width: 70, height: 70 },
   { name: 'Shopify', image: 'shopify.svg', width: 70, height: 70 },
+  { name: 'n8n', image: 'n8n.svg', width: 70, height: 70 },
   { name: 'Hostinger', image: 'hostinger.svg', width: 70, height: 70 },
   { name: 'WooCommerce', image: 'woocommerce.svg', width: 70, height: 70 },
-  { name: 'n8n', image: 'n8n.svg', width: 70, height: 70 },
   { name: 'AI Automation', image: 'ai-automation.svg', width: 70, height: 70 },
   { name: 'Node.js', image: 'node.png', width: 70, height: 70 },
   { name: 'MongoDB', image: 'mongodb.png', width: 40, height: 40 },
@@ -26,9 +26,9 @@ const FRONTEND_SKILL = [
   { name: 'Tailwind CSS', image: 'tailwind.png', width: 70, height: 70 },
   { name: 'WordPress', image: 'wordpress.svg', width: 70, height: 70 },
   { name: 'Shopify', image: 'shopify.svg', width: 70, height: 70 },
+  { name: 'n8n', image: 'n8n.svg', width: 70, height: 70 },
   { name: 'Hostinger', image: 'hostinger.svg', width: 70, height: 70 },
   { name: 'WooCommerce', image: 'woocommerce.svg', width: 70, height: 70 },
-  { name: 'n8n', image: 'n8n.svg', width: 70, height: 70 },
   { name: 'AI Automation', image: 'ai-automation.svg', width: 70, height: 70 },
 ];
 
@@ -37,9 +37,9 @@ const BACKEND_SKILL = [
   { name: 'Express.js', image: 'express.png', width: 70, height: 70 },
   { name: 'WordPress', image: 'wordpress.svg', width: 70, height: 70 },
   { name: 'Shopify', image: 'shopify.svg', width: 70, height: 70 },
+  { name: 'n8n', image: 'n8n.svg', width: 65, height: 65 },
   { name: 'Hostinger', image: 'hostinger.svg', width: 65, height: 65 },
   { name: 'WooCommerce', image: 'woocommerce.svg', width: 65, height: 65 },
-  { name: 'n8n', image: 'n8n.svg', width: 65, height: 65 },
   { name: 'AI Automation', image: 'ai-automation.svg', width: 70, height: 70 },
 ];
 
