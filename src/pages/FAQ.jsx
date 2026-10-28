@@ -12,9 +12,9 @@ const FAQ = () => {
   return (
     <div className="py-20 md:py-28 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="Frequently Asked Questions | Hussain Web Solutions"
-        description="Answers to common questions about hiring a web developer, project timelines, Shopify integration, WordPress management, and automation services."
-        canonical="https://hussainwebsolutions.netlify.app/faq"
+        title="Frequently Asked Questions | Hussain Awan | Hussain Web Solutions"
+        description="Answers to common questions about hiring web developer Hussain Awan, project timelines, Shopify integration, WordPress management, and automation services."
+        canonical="https://hussain-web-solutions.vercel.app/faq"
       />
       <Reveal>
         <div className="text-center mb-16">

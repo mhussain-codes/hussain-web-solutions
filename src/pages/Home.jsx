@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <div className="h-full w-full flex flex-col">
       <SEO 
-        title="M. Hussain | Full Stack Web Developer & Automation Specialist"
-        description="Providing the best project experience. Modern web development, high-converting Shopify storefronts, and automated web platforms."
-        canonical="https://hussainwebsolutions.netlify.app/"
+        title="Hussain Awan | Web Developer, Shopify Expert & AI Automation | Hussain Web Solutions"
+        description="Official portfolio of Hussain Awan (Hussain Web Solutions). Modern web development, high-converting Shopify storefronts, bespoke WordPress, and automated web platforms."
+        canonical="https://hussain-web-solutions.vercel.app/"
       />
       
       {/* 1. Hero Section with Inverted Blackhole & Tech Orbit */}

@@ -254,7 +254,7 @@ const Admin = () => {
         <SEO 
           title="Admin Portal | Hussain Web Solutions"
           description="Internal Management Portal"
-          canonical="https://hussainwebsolutions.netlify.app/admin"
+          canonical="https://hussain-web-solutions.vercel.app/admin"
         />
 
         <div className="w-full max-w-md p-8 sm:p-10 rounded-3xl bg-[#0c0f26] border border-white/[0.08] shadow-[0_10px_50px_rgba(0,0,0,0.8)]">
@@ -313,7 +313,7 @@ const Admin = () => {
       <SEO 
         title="Admin Content Manager | Hussain Web Solutions"
         description="Internal Management Portal"
-        canonical="https://hussainwebsolutions.netlify.app/admin"
+        canonical="https://hussain-web-solutions.vercel.app/admin"
       />
 
       {/* Floating Toast Notification */}

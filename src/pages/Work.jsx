@@ -12,9 +12,9 @@ const Work = () => {
   return (
     <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="Portfolio & Projects | Hussain Web Solutions"
-        description="Explore verified projects engineered by M. Hussain: Unique Match Maker, Timecraft Shopify Theme, Trade Signals Bot, and client e-commerce platforms."
-        canonical="https://hussainwebsolutions.netlify.app/work"
+        title="Portfolio & Projects | Hussain Awan | Hussain Web Solutions"
+        description="Explore verified projects engineered by Hussain Awan: Unique Match Maker, Timecraft Shopify Theme, Trade Signals Bot, and client e-commerce platforms."
+        canonical="https://hussain-web-solutions.vercel.app/work"
       />
       
       <Reveal>

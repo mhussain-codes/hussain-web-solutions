@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
       <SEO 
         title="Privacy Policy | Hussain Web Solutions"
         description="Privacy policy and data governance practices for Hussain Web Solutions."
-        canonical="https://hussainwebsolutions.netlify.app/privacy-policy"
+        canonical="https://hussain-web-solutions.vercel.app/privacy-policy"
       />
       <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-8 tracking-tight">Privacy Policy</h1>
       <div className="cosmic-card p-8 md:p-10 space-y-6 text-slate-300 text-sm leading-relaxed">

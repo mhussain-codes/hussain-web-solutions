@@ -79,9 +79,9 @@ const Contact = () => {
   return (
     <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="Contact M. Hussain | Start a Project"
-        description="Get in touch to discuss your next web development project. Fill out the inquiry form or contact me directly via WhatsApp for a professional WordPress or Shopify solution."
-        canonical="https://hussainwebsolutions.netlify.app/contact"
+        title="Contact Hussain Awan | Start a Web Project | Hussain Web Solutions"
+        description="Get in touch with Hussain Awan to discuss your next web development project. Fill out the brief or reach out directly on WhatsApp or social channels."
+        canonical="https://hussain-web-solutions.vercel.app/contact"
       />
       <Reveal>
         <div className="text-center mb-16">

@@ -7,7 +7,7 @@ const Terms = () => {
       <SEO 
         title="Terms & Conditions | Hussain Web Solutions"
         description="Terms and conditions governing the use of Hussain Web Solutions web development services."
-        canonical="https://hussainwebsolutions.netlify.app/terms"
+        canonical="https://hussain-web-solutions.vercel.app/terms"
       />
       <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-8 tracking-tight">Terms & Conditions</h1>
       <div className="cosmic-card p-8 md:p-10 space-y-6 text-slate-300 text-sm leading-relaxed">

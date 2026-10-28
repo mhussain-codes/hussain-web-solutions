@@ -35,9 +35,9 @@ const ProjectDetails = () => {
   return (
     <article className="py-12 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title={`${project.title || project.name} | Portfolio | Hussain Web Solutions`}
-        description={project.description || `View the ${project.title || project.name} project details. Professional web development by Hussain Web Solutions.`}
-        canonical={`https://hussainwebsolutions.netlify.app/work/${project.id}`}
+        title={`${project.title || project.name} | Hussain Awan Portfolio | Hussain Web Solutions`}
+        description={project.description || `View the ${project.title || project.name} project details. Professional web development by Hussain Awan.`}
+        canonical={`https://hussain-web-solutions.vercel.app/work/${project.id}`}
         image={project.image}
       />
       <Reveal>

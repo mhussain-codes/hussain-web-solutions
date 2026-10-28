@@ -10,9 +10,9 @@ const About = () => {
   return (
     <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="About M. Hussain | Web Developer & Automation Specialist"
-        description="Learn about M. Hussain, founder of Hussain Web Solutions. A web developer skilled in WordPress, Shopify, React, and workflow automation."
-        canonical="https://hussainwebsolutions.netlify.app/about"
+        title="About Hussain Awan | Web Developer & Automation Specialist | Hussain Web Solutions"
+        description="Learn about Hussain Awan (M. Hussain), founder of Hussain Web Solutions. A senior web developer skilled in WordPress, Shopify, React, and workflow automation."
+        canonical="https://hussain-web-solutions.vercel.app/about"
       />
       <Reveal>
         <div className="text-center mb-16">
@@ -21,7 +21,7 @@ const About = () => {
             <span>Profile & Engineering Philosophy</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
-            About M. Hussain
+            About Hussain Awan
           </h1>
           <p className="text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Remote web developer, Shopify storefront engineer, and digital automation specialist building high-performance web solutions for global businesses.

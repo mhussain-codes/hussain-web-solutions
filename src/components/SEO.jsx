@@ -6,13 +6,14 @@ const SEO = ({
   description, 
   canonical, 
   type = 'website', 
-  image = 'https://hussainwebsolutions.netlify.app/og-image.jpg' 
+  image
 }) => {
   const location = useLocation();
 
   useEffect(() => {
-    // Determine canonical URL based on location if not explicitly provided
-    const finalCanonical = canonical || `https://hussainwebsolutions.netlify.app${location.pathname}`;
+    const siteUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://hussain-web-solutions.vercel.app';
+    const finalCanonical = canonical || `${siteUrl}${location.pathname}`;
+    const ogImage = image || `${siteUrl}/og-image.jpg`;
 
     // Update document title
     if (title) {
@@ -38,14 +39,14 @@ const SEO = ({
     setMetaTag('property', 'og:title', title);
     setMetaTag('property', 'og:description', description);
     setMetaTag('property', 'og:url', finalCanonical);
-    setMetaTag('property', 'og:image', image);
+    setMetaTag('property', 'og:image', ogImage);
     setMetaTag('property', 'og:type', type);
 
     // Twitter Card Metadata
     setMetaTag('name', 'twitter:card', 'summary_large_image');
     setMetaTag('name', 'twitter:title', title);
     setMetaTag('name', 'twitter:description', description);
-    setMetaTag('name', 'twitter:image', image);
+    setMetaTag('name', 'twitter:image', ogImage);
 
     // Canonical Tag
     let canonicalLink = document.querySelector('link[rel="canonical"]');

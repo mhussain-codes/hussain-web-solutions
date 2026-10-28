@@ -1,7 +1,6 @@
 User-agent: *
 Disallow: /admin
-Disallow: /.netlify/
 Disallow: /api/
 Allow: /
 
-Sitemap: https://hussainwebsolutions.netlify.app/sitemap.xml
+Sitemap: https://hussain-web-solutions.vercel.app/sitemap.xml

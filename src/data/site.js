@@ -1,14 +1,14 @@
 export const siteInfo = {
   businessName: "Hussain Web Solutions",
   shortName: "HWS",
-  founder: "M. Hussain",
+  founder: "Hussain Awan (M. Hussain)",
   positioning: "Web Developer | WordPress & Shopify Developer | Automation Specialist",
   tagline: "High-Performance Websites, E-Commerce & Custom Web Solutions.",
-  description: "I am a web developer specializing in high-performance Shopify storefronts, bespoke WordPress development, modern React web applications, and seamless business automation. Serving forward-thinking brands across the UAE, UK, Australia, and worldwide.",
+  description: "I am Hussain Awan, a professional web developer specializing in high-performance Shopify storefronts, bespoke WordPress development, modern React web applications, and seamless business automation. Serving forward-thinking brands across the UAE, UK, Australia, and worldwide.",
   contact: {
     whatsapp: "+92 325 5269 507",
     whatsappLink: "https://wa.me/923255269507",
-    defaultMessage: "Hi M. Hussain, I found Hussain Web Solutions and I'd like to discuss a website or automation project.",
+    defaultMessage: "Hi Hussain, I found Hussain Web Solutions and I'd like to discuss a website or automation project.",
     linkedin: "https://www.linkedin.com/in/hussain-awan-b64314282/",
     facebook: "https://www.facebook.com/share/19fZxJZbJv/",
     instagram: "https://www.instagram.com/hussainxwebsolutions?cplk=MWs1MGpkaTh5MTllMA==",
@@ -17,7 +17,7 @@ export const siteInfo = {
     location: "Remote / Available Globally"
   },
   seo: {
-    title: "Hussain Web Solutions | Web Developer & Shopify Specialist",
-    description: "Premium web development, custom Shopify stores, WordPress solutions, and digital automation engineered by M. Hussain."
+    title: "Hussain Awan | Web Developer, Shopify Expert & AI Automation | Hussain Web Solutions",
+    description: "Official portfolio of Hussain Awan (Hussain Web Solutions). Senior Web Developer & Shopify Specialist crafting high-converting e-commerce stores, custom React web applications, and workflow automation."
   }
 };

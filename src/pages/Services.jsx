@@ -12,9 +12,9 @@ const Services = () => {
   return (
     <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="Web Development & Automation Services | Hussain Web Solutions"
-        description="Professional WordPress development, Shopify store customization, React frontend development, and WhatsApp automation to streamline your business workflow."
-        canonical="https://hussainwebsolutions.netlify.app/services"
+        title="Web Development & Automation Services | Hussain Awan | Hussain Web Solutions"
+        description="Professional WordPress development, Shopify store customization, React frontend development, and WhatsApp automation engineered by Hussain Awan."
+        canonical="https://hussain-web-solutions.vercel.app/services"
       />
       <Reveal>
         <div className="text-center mb-16">
