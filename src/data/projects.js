@@ -10,6 +10,9 @@ export const projects = [
   {
     id: "unique-match-maker",
     name: "Unique Match Maker",
+    metaTitle: "Unique Match Maker | Matrimonial React Web Application by Hussain Awan",
+    metaDescription: "Case study of Unique Match Maker: A modern community matrimonial matchmaking web application built with React 19, Tailwind CSS, and dynamic bio-data filtering by Hussain Awan.",
+    alt: "Unique Match Maker Community Matrimonial React Web Application by Hussain Awan",
     url: "https://unique-match-maker.vercel.app/",
     category: "Custom Web Application",
     badge: "Web Platform",
@@ -30,6 +33,9 @@ export const projects = [
   {
     id: "timecraft-shopify-theme",
     name: "Timecraft Shopify Theme Demo",
+    metaTitle: "Timecraft Luxury Watchmaker Theme | Shopify Storefront by Hussain Awan",
+    metaDescription: "In-depth case study of Timecraft: A bespoke luxury watchmaker Shopify storefront engineered by Hussain Awan with custom Liquid sections, slide-out cart drawer, and high conversion speed.",
+    alt: "Timecraft Luxury Watchmaker Shopify Storefront Theme Demo by Hussain Awan",
     url: "https://mhussain-codes.github.io/timecraft-shopify-theme/demo-preview/",
     category: "E-Commerce / Shopify Storefront",
     badge: "Shopify Storefront",
@@ -50,6 +56,9 @@ export const projects = [
   {
     id: "hussain-trade-signals-bot",
     name: "Hussain Trade Signals Bot",
+    metaTitle: "Hussain Trade Signals Bot | Automated Fintech Dashboard & Web App",
+    metaDescription: "Technical case study of Hussain Trade Signals Bot: Real-time technical indicators, algorithmic market analytics, and automated Telegram & WhatsApp signal routing by Hussain Awan.",
+    alt: "Hussain Trade Signals Bot - Automated Trading Analytics Dashboard by Hussain Awan",
     url: "https://hussaintradesignalsbot.netlify.app/",
     category: "Trading Web App / Automation",
     badge: "Fintech & Automation",
@@ -70,6 +79,9 @@ export const projects = [
   {
     id: "cherryflows",
     name: "CherryFlows",
+    metaTitle: "CherryFlows AI Automation Agency Website | Case Study by Hussain Awan",
+    metaDescription: "Responsive WordPress & Elementor platform engineered by Hussain Awan for CherryFlows AI Automation Agency, featuring automated appointment booking and client lead pipelines.",
+    alt: "CherryFlows AI Automation Agency Website - Appointment Booking Platform",
     url: "https://cherryflows.com/",
     category: "Appointment Booking / Agency Website",
     badge: "Agency Website",
@@ -89,6 +101,9 @@ export const projects = [
   {
     id: "at-brand",
     name: "AT Brand",
+    metaTitle: "AT Brand Men's Fashion Store | WooCommerce & WordPress Development",
+    metaDescription: "High-converting, mobile-first e-commerce storefront developed by Hussain Awan for AT Brand men's apparel. Built with WordPress, WooCommerce, and multi-currency checkout.",
+    alt: "AT Brand Men's Fashion E-Commerce Storefront - WooCommerce Development",
     url: "https://atbrand.store/",
     category: "E-Commerce / Fashion",
     badge: "E-Commerce",
@@ -108,6 +123,9 @@ export const projects = [
   {
     id: "skillpathhub",
     name: "SkillPathHub",
+    metaTitle: "SkillPathHub Online Learning Platform | Web Portal by Hussain Awan",
+    metaDescription: "Modern online education and skills roadmap portal developed by Hussain Awan for SkillPathHub, featuring structured course curriculum and frictionless student onboarding.",
+    alt: "SkillPathHub Online Course and Skills Roadmap Education Platform",
     url: "https://sandybrown-gaur-200812.hostingersite.com/",
     category: "Education / Courses",
     badge: "Education",
@@ -127,6 +145,9 @@ export const projects = [
   {
     id: "aqua-life",
     name: "Aqua Life",
+    metaTitle: "Aqua Life Water & RO Plant Corporate Website | by Hussain Awan",
+    metaDescription: "B2B corporate website engineered by Hussain Awan for Aqua Life industrial water purification and RO plant, featuring equipment galleries and direct inquiry routing.",
+    alt: "Aqua Life Water and RO Purification Plant Corporate Website",
     url: "https://paleturquoise-coyote-717141.hostingersite.com/",
     category: "Business / Water & RO Plant",
     badge: "Corporate",

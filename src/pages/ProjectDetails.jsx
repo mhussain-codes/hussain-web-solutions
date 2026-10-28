@@ -35,8 +35,8 @@ const ProjectDetails = () => {
   return (
     <article className="py-12 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title={`${project.title || project.name} | Hussain Awan Portfolio | Hussain Web Solutions`}
-        description={project.description || `View the ${project.title || project.name} project details. Professional web development by Hussain Awan.`}
+        title={project.metaTitle || `${project.title || project.name} | Hussain Awan Portfolio | Hussain Web Solutions`}
+        description={project.metaDescription || project.description || `View the ${project.title || project.name} project details. Professional web development by Hussain Awan.`}
         canonical={`https://hussain-web-solutions.vercel.app/work/${project.id}`}
         image={project.image}
       />
@@ -66,8 +66,10 @@ const ProjectDetails = () => {
           {project.image ? (
             <img 
               src={project.image} 
-              alt={project.name} 
+              alt={project.alt || `${project.name} - ${project.category} by Hussain Awan`} 
               className="w-full h-full object-cover object-top"
+              loading="lazy"
+              decoding="async"
             />
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center bg-[#0d1026]">

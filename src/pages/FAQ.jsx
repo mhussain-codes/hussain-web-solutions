@@ -12,8 +12,8 @@ const FAQ = () => {
   return (
     <div className="py-20 md:py-28 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="Frequently Asked Questions | Hussain Awan | Hussain Web Solutions"
-        description="Answers to common questions about hiring web developer Hussain Awan, project timelines, Shopify integration, WordPress management, and automation services."
+        title="Frequently Asked Questions | Hiring Web Developer Hussain Awan"
+        description="Common questions answered about hiring Full Stack Web Developer & Shopify Expert Hussain Awan: Development timelines, pricing, Shopify setups, and automation."
         canonical="https://hussain-web-solutions.vercel.app/faq"
       />
       <Reveal>

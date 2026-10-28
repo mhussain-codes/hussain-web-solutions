@@ -202,9 +202,10 @@ const Projects = () => {
                 <div className="fullpage-scroll-box h-[380px] sm:h-[460px] w-full relative overflow-hidden bg-black/40">
                   <img
                     src={project.resolvedImage}
-                    alt={project.name}
+                    alt={project.alt || `${project.name} - ${project.badge || project.category} by Hussain Awan`}
                     className="scrollable-img"
                     loading="lazy"
+                    decoding="async"
                   />
                   {/* Floating Hover Indicator Badge */}
                   <div className="absolute top-3.5 right-3.5 z-10 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-purple-500/30 text-[11px] text-purple-200 font-medium pointer-events-none transition-opacity duration-300 group-hover:opacity-30 flex items-center gap-1.5 shadow-lg">
@@ -347,9 +348,10 @@ const Projects = () => {
                 <div className="fullpage-scroll-box compact-scroll-box relative w-full h-[220px] overflow-hidden bg-black/50 border-b border-[#2A0E61]/60">
                   <img
                     src={project.resolvedImage}
-                    alt={project.name}
+                    alt={project.alt || `${project.name} - ${project.badge || project.category} by Hussain Awan`}
                     className="scrollable-img"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#08091a]/60 via-transparent to-transparent pointer-events-none" />
                   

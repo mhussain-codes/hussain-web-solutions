@@ -12,8 +12,8 @@ const Work = () => {
   return (
     <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="Portfolio & Projects | Hussain Awan | Hussain Web Solutions"
-        description="Explore verified projects engineered by Hussain Awan: Unique Match Maker, Timecraft Shopify Theme, Trade Signals Bot, and client e-commerce platforms."
+        title="Portfolio & Case Studies | Hussain Awan | Full Stack Web Developer"
+        description="Explore verified projects engineered by Full Stack Web Developer Hussain Awan: Custom Shopify storefronts, React web platforms, and automated business systems."
         canonical="https://hussain-web-solutions.vercel.app/work"
       />
       

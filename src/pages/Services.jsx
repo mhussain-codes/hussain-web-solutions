@@ -12,8 +12,8 @@ const Services = () => {
   return (
     <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="Web Development & Automation Services | Hussain Awan | Hussain Web Solutions"
-        description="Professional WordPress development, Shopify store customization, React frontend development, and WhatsApp automation engineered by Hussain Awan."
+        title="Web Development & Shopify Services | Hussain Awan | Automation Specialist"
+        description="Specialized development services by Hussain Awan: Custom Shopify themes, high-performance WordPress & WooCommerce websites, React applications, and workflow automation."
         canonical="https://hussain-web-solutions.vercel.app/services"
       />
       <Reveal>

@@ -40,13 +40,13 @@ const Hero = () => {
             className="Welcome-box py-[8px] px-[12px] border border-[#7042f88b] opacity-[0.95]"
           >
             <Sparkles className="text-[#b49bff] mr-[10px] h-4 w-4 shrink-0" />
-            <h1 className="Welcome-text text-[13px] font-semibold tracking-wide">
-              Web Developer &amp; Automation Portfolio
-            </h1>
+            <span className="Welcome-text text-[13px] font-semibold tracking-wide">
+              Full Stack Web Developer &amp; Automation Specialist
+            </span>
           </motion.div>
 
-          {/* Headline */}
-          <motion.div
+          {/* Primary Semantic H1 Headline */}
+          <motion.h1
             variants={slideInFromLeft(0.5)}
             className="flex flex-col gap-3 mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]"
           >
@@ -57,7 +57,7 @@ const Hero = () => {
               </span>{' '}
               project experience.
             </span>
-          </motion.div>
+          </motion.h1>
 
           {/* Subtitle Bio */}
           <motion.p

@@ -91,12 +91,12 @@ const Skills = () => {
           className="Welcome-box py-[8px] px-[12px] border border-[#7042f88b] opacity-[0.95]"
         >
           <Sparkles className="text-[#b49bff] mr-[10px] h-4 w-4" />
-          <h1 className="Welcome-text text-[13px] font-semibold">
+          <span className="Welcome-text text-[13px] font-semibold">
             High Performance Modern Tech Stack
-          </h1>
+          </span>
         </motion.div>
 
-        <motion.div
+        <motion.h2
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -104,7 +104,7 @@ const Skills = () => {
           className="text-3xl sm:text-4xl text-white font-extrabold mt-[14px] text-center tracking-tight"
         >
           Making apps with modern technologies.
-        </motion.div>
+        </motion.h2>
 
         <motion.div
           initial="hidden"

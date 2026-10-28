@@ -31,9 +31,10 @@ const ProjectCard = ({ project, index = 0, isFeatured = false }) => {
         <div className="fullpage-scroll-box compact-scroll-box relative w-full h-[220px] bg-[#070919] overflow-hidden border-b border-white/[0.06]">
           <img
             src={imgSrc}
-            alt={`${project.name} preview showcase`}
+            alt={project.alt || `${project.name} - ${project.badge || project.category} Showcase by Hussain Awan`}
             className="scrollable-img"
             loading="lazy"
+            decoding="async"
           />
 
           {/* Top Badge Overlay */}

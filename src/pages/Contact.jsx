@@ -79,8 +79,8 @@ const Contact = () => {
   return (
     <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="Contact Hussain Awan | Start a Web Project | Hussain Web Solutions"
-        description="Get in touch with Hussain Awan to discuss your next web development project. Fill out the brief or reach out directly on WhatsApp or social channels."
+        title="Contact Hussain Awan | Hire Web Developer & Shopify Expert"
+        description="Get in touch with Hussain Awan for high-performance Shopify development, custom React web applications, or business automation. Available globally via WhatsApp."
         canonical="https://hussain-web-solutions.vercel.app/contact"
       />
       <Reveal>

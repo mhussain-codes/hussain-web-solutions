@@ -10,8 +10,8 @@ const About = () => {
   return (
     <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SEO 
-        title="About Hussain Awan | Web Developer & Automation Specialist | Hussain Web Solutions"
-        description="Learn about Hussain Awan (M. Hussain), founder of Hussain Web Solutions. A senior web developer skilled in WordPress, Shopify, React, and workflow automation."
+        title="About Hussain Awan | Full Stack Web Developer & Shopify Expert"
+        description="Learn about Hussain Awan (M. Hussain), founder of Hussain Web Solutions. Delivering modern web development, custom Shopify storefronts, and digital workflow automation worldwide."
         canonical="https://hussain-web-solutions.vercel.app/about"
       />
       <Reveal>
@@ -36,8 +36,10 @@ const About = () => {
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-3xl p-1 bg-gradient-to-tr from-violet-600/40 via-white/10 to-cyan-500/30 shadow-[0_0_35px_rgba(139,92,246,0.3)] mb-6">
               <img 
                 src={portraitImg} 
-                alt={siteInfo.founder} 
+                alt="Hussain Awan - Full Stack Web Developer & Shopify Specialist" 
                 className="w-full h-full rounded-[22px] object-cover object-top"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h3 className="text-xl font-bold text-white">{siteInfo.founder}</h3>
